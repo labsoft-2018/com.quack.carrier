@@ -1,0 +1,45 @@
+{
+  "type": "REACT_NATIVE",
+  "template": "git@github.com:thunder-js/react-native-ts-lab.git",
+  "name": "Quack",
+  "node": {
+    "packageName": "quack-carrier-mobile"
+  },
+  "facebook": {
+    "appId": "",
+    "appDisplayName": "Quack"
+  },
+  "googleMaps": {
+    "apiKey": ""
+  },
+  "assets": {
+    "icon": "",
+    "splash": ""
+  },
+  "ios": {
+    "displayName": "Quack",
+    "projectName": "Quack",
+    "bundleIdentifier": "com.quack.carrier",
+    "fastlane": {
+      "itcTeamName": "",
+      "itcTeamId": "",
+      "teamName": "",
+      "teamId": "",
+      "appleId": "",
+      "certificatesRepoUrl": "",
+      "slackUrl": ""
+    },
+    "codePush": {
+      "staging": "",
+      "production": ""
+    }
+  },
+  "android": {
+    "displayName": "Quack",
+    "bundleIdentifier": "com.quack.carrier",
+    "codePush": {
+      "staging": "",
+      "production": ""
+    }
+  }
+}
