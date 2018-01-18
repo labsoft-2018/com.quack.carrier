@@ -1,4 +1,4 @@
-package com.quack.carrier;
+package com.quackcarrier;
 
 import android.app.Application;
 

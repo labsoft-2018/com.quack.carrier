@@ -99,7 +99,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.quack.carrier"
+        applicationId "com.quackcarrier"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
