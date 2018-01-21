@@ -5,6 +5,7 @@ import ProductList from '../../components/ProductList'
 import OrderBook from '../../components/OrderBook'
 import { Button } from 'react-native-ui-lib'
 import { Colors } from '../../../../resources/colors'
+import QRCodeModal from '../../components/QRCodeModal/index'
 
 
 
@@ -12,6 +13,7 @@ export default class OrderScreen extends React.Component {
   static navigatorStyle = {
     navBarHidden: true
   }
+
   render() {
     return (
       <ScreenWrapper>
@@ -23,6 +25,15 @@ export default class OrderScreen extends React.Component {
           fullWidth
           borderRadius={0}
           onPress={() => {}}
+        />
+        <QRCodeModal
+          isVisible
+          onRequestClose={() => {
+            
+          }}
+          onQRCodeRead={() => {
+            
+          }}
         />
       </ScreenWrapper>
       

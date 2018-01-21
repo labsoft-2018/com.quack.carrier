@@ -6,7 +6,8 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
-    "allowJs": true
+    "allowJs": true,
+    "noUnusedLocals": true
   },
   "include": [
     "src",

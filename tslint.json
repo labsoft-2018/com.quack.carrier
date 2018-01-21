@@ -9,12 +9,11 @@
     "max-line-length": [false],
     "eofline": true,
     "member-ordering": [false],
-    "no-unused-variable": [ true, { "ignore-pattern": "^React$" } ],
     "semicolon": false,
     "no-var-requires":false,
     "no-implicit-dependencies": false,
     "no-object-literal-type-assertion": false,
-    "no-submodule-imports": false,
+    "no-submodule-imports": false
   },
   "jsRules": {
     "curly": true,
