@@ -3,6 +3,8 @@ package com.quackcarrier;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.airbnb.android.react.lottie.LottiePackage;
 import com.microsoft.codepush.react.CodePush;
 import com.reactnativenavigation.NavigationReactPackage;
 import com.facebook.react.ReactNativeHost;
@@ -31,6 +33,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new VectorIconsPackage(),
+            new LottiePackage(),
             new CodePush(null, getApplicationContext(), BuildConfig.DEBUG),
             new NavigationReactPackage()
       );

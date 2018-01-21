@@ -3,6 +3,7 @@ import App from './App';
 import SignIn from './modules/auth/screens/SignIn'
 import { Navigation } from 'react-native-navigation'
 import { BUNDLE_IDENTIFIER } from './resources/constants';
+import MissionsScreen from './modules/mission/screens/Missions';
 
 export const getScreenName = (bundleIdentifier, screenName) => `${bundleIdentifier}.${screenName}`
 
@@ -13,5 +14,6 @@ const registerScreen = (name, ScreenComponent) => {
 export const registerScreens = () => {
   registerScreen('App', App)
   registerScreen('SignIn', SignIn)
+  registerScreen('Missions', MissionsScreen)
 }
 
