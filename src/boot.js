@@ -2,8 +2,11 @@ import { makeHot, tryUpdateSelf, callOnce, clearCacheFor, redraw } from 'haul/ho
 import { Navigation } from 'react-native-navigation'
 import { BUNDLE_IDENTIFIER } from './resources/constants';
 import { registerScreens, getScreenName } from './screens';
+import configTheme from './config/theme'
+
 
 const startApp = () => {
+  configTheme()
   // Navigation.startTabBasedApp({
   //   tabs: [
   //     {
@@ -16,7 +19,7 @@ const startApp = () => {
 
   Navigation.startSingleScreenApp({
     screen: {
-      screen: getScreenName(BUNDLE_IDENTIFIER, 'SignIn'),
+      screen: getScreenName(BUNDLE_IDENTIFIER, 'Order'),
     },
     passProps: {}, // simple serializable object that will pass as props to all top screens (optional)
     animationType: 'slide-down' // optional, add transition animation to root change: 'none', 'slide-down', 'fade'

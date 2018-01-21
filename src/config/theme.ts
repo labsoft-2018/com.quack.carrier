@@ -4,6 +4,7 @@ export default () => {
   Colors.loadColors({
     pink: '#FF69B4',
     gold: '#FFD700',
+    blue: '#FF0000'
   });
   
   Typography.loadTypographies({
