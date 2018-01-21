@@ -4,14 +4,22 @@ import { BUNDLE_IDENTIFIER } from './resources/constants';
 import { registerScreens, getScreenName } from './screens';
 
 const startApp = () => {
-  Navigation.startTabBasedApp({
-    tabs: [
-      {
-        label: 'One',
-        screen: getScreenName(BUNDLE_IDENTIFIER, 'App'), // this is a registered name for a screen
-        title: 'Screen One'
-      }
-    ]
+  // Navigation.startTabBasedApp({
+  //   tabs: [
+  //     {
+  //       label: 'One',
+  //       screen: getScreenName(BUNDLE_IDENTIFIER, 'SignIn'), // this is a registered name for a screen
+  //       title: 'Screen One'
+  //     }
+  //   ]
+  // });
+
+  Navigation.startSingleScreenApp({
+    screen: {
+      screen: getScreenName(BUNDLE_IDENTIFIER, 'SignIn'),
+    },
+    passProps: {}, // simple serializable object that will pass as props to all top screens (optional)
+    animationType: 'slide-down' // optional, add transition animation to root change: 'none', 'slide-down', 'fade'
   });
 }
 
