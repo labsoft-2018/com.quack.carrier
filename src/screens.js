@@ -1,15 +1,17 @@
 import { makeHot, tryUpdateSelf, callOnce, clearCacheFor, redraw } from 'haul/hot';
 import App from './App';
+import SignIn from './modules/auth/screens/SignIn'
 import { Navigation } from 'react-native-navigation'
 import { BUNDLE_IDENTIFIER } from './resources/constants';
 
 export const getScreenName = (bundleIdentifier, screenName) => `${bundleIdentifier}.${screenName}`
 
-const registerScreen = (name) => {
-  Navigation.registerComponent(getScreenName(BUNDLE_IDENTIFIER, name), makeHot(() => App, getScreenName(BUNDLE_IDENTIFIER, name)))
+const registerScreen = (name, ScreenComponent) => {
+  Navigation.registerComponent(getScreenName(BUNDLE_IDENTIFIER, name), makeHot(() => ScreenComponent, getScreenName(BUNDLE_IDENTIFIER, name)))
 }
 
 export const registerScreens = () => {
-  registerScreen('App')
+  registerScreen('App', App)
+  registerScreen('SignIn', SignIn)
 }
 
