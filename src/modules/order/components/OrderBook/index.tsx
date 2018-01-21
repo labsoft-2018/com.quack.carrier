@@ -3,6 +3,7 @@ import { View, StyleSheet, Dimensions } from 'react-native';
 import { TabViewAnimated, TabBar, SceneMap } from 'react-native-tab-view';
 import Products from '../../containers/Products'
 import Locations from '../../containers/Locations'
+import { Colors } from '../../../../resources/colors'
 
 const initialLayout = {
   height: 0,
@@ -20,7 +21,12 @@ export default class TabViewExample extends React.Component {
 
   _handleIndexChange = index => this.setState({ index });
 
-  _renderHeader = props => <TabBar {...props} />;
+  _renderHeader = props => (
+    <TabBar
+      {...props}
+      style={styles.tabBar}
+    />
+  );
 
   _renderScene = SceneMap({
     map: Locations,
@@ -45,4 +51,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  tabBar: {
+    backgroundColor: Colors.PRIMARY_COLOR
+  }
 });

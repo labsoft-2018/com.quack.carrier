@@ -3,6 +3,8 @@ import { View, Image, StyleSheet, ViewStyle, Text, TextStyle } from 'react-nativ
 import ScreenWrapper from '../../../common/components/ScreenWrapper'
 import ProductList from '../../components/ProductList'
 import OrderBook from '../../components/OrderBook'
+import { Button } from 'react-native-ui-lib'
+import { Colors } from '../../../../resources/colors'
 
 
 
@@ -14,6 +16,14 @@ export default class OrderScreen extends React.Component {
     return (
       <ScreenWrapper>
         <OrderBook />
+        <Button
+          backgroundColor={Colors.PRIMARY_COLOR}
+          label="Confirmar entrega"
+          size='large'
+          fullWidth
+          borderRadius={0}
+          onPress={() => {}}
+        />
       </ScreenWrapper>
       
     )
