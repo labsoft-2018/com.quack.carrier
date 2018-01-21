@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>New App</string>
+	<string>Quack Carrier</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -21,9 +21,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>14</string>
+	<string>1</string>
 	<key>CodePushDeploymentKey</key>
-	<string>uTSmohwz64Cw4gWbDqb8JyID69tZ1e0b1580-1e9f-4dc6-a7c9-4c6f6ac0bec5</string>
+	<string>Iq3kR_57l2LHPYlHaXpt6zcRblLT1e0b1580-1e9f-4dc6-a7c9-4c6f6ac0bec5</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>

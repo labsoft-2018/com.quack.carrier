@@ -1303,7 +1303,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Rafael Ribeiro Correia (9KGBT65XF6)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 18;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = WRM4UPAZ5R;
 				HEADER_SEARCH_PATHS = (
@@ -1318,10 +1318,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.quackcarrier;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quack.carrier;
 				PRODUCT_NAME = QuackCarrier;
-				PROVISIONING_PROFILE = "ee3c928a-03b4-4f84-b9a8-a0330588e521";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.quackcarrier";
+				PROVISIONING_PROFILE = "c52e735c-5ce1-467d-abb1-2f18fb79f60f";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.quack.carrier";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1333,7 +1333,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Rafael Ribeiro Correia (WRM4UPAZ5R)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Rafael Ribeiro Correia (WRM4UPAZ5R)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = WRM4UPAZ5R;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1347,10 +1347,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.quackcarrier;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quack.carrier;
 				PRODUCT_NAME = QuackCarrier;
-				PROVISIONING_PROFILE = "6637b435-f624-4d11-9b6c-531dcdd0170f";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.quackcarrier";
+				PROVISIONING_PROFILE = "484369e7-67f8-4c2d-aac5-223cd5032a66";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.quack.carrier";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
