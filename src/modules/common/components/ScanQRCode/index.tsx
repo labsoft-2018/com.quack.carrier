@@ -4,23 +4,18 @@ import Camera from 'react-native-camera';
 import { StyleSheet } from 'react-native'
 
 export interface IScanQRCodeProps {
-
+  onQRCodeRead: (qrCode: string) => void
 }
 
 export default class ScanQRCode extends React.Component<IScanQRCodeProps> {
-  camera: Camera
-
   private handleBarcodeRead = (e) => {
-    alert(JSON.stringify(e))
+    this.props.onQRCodeRead(e.data)
   }
 
-  render() {
+  public render() {
     return (
       <View flex>
         <Camera
-          ref={(cam) => {
-            this.camera = cam;
-          }}
           onBarCodeRead={this.handleBarcodeRead}
           style={styles.preview}
           aspect={Camera.constants.Aspect.fill}>

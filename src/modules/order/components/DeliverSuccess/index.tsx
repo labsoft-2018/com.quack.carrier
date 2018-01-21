@@ -5,12 +5,12 @@ import { View, Button, Text } from 'react-native-ui-lib'
 import { Colors } from '../../../../resources/colors'
 import { TextStyle, StyleSheet } from 'react-native'
 
-export interface IConfirmDeliverProps {
-
+export interface IDeliverSuccessProps {
+  onPressFinish: () => void;
 }
 
-const ConfirmDeliver: React.SFC<IConfirmDeliverProps> = ({
-
+const DeliverSuccess: React.SFC<IDeliverSuccessProps> = ({
+  onPressFinish
 }) => (
   <View flex>
     <View flex centerV>
@@ -22,7 +22,6 @@ const ConfirmDeliver: React.SFC<IConfirmDeliverProps> = ({
           speed={0.9}
         />
       </View>
-      
     </View>
     <Button
       backgroundColor={Colors.PRIMARY_COLOR}
@@ -30,7 +29,7 @@ const ConfirmDeliver: React.SFC<IConfirmDeliverProps> = ({
       size="large"
       fullWidth
       borderRadius={0}
-      onPress={() => {}}
+      onPress={onPressFinish}
     />
   </View>
   
@@ -42,4 +41,4 @@ const styles = StyleSheet.create({
   } as TextStyle
 })
 
-export default ConfirmDeliver
+export default DeliverSuccess

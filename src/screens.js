@@ -5,7 +5,7 @@ import { Navigation } from 'react-native-navigation'
 import { BUNDLE_IDENTIFIER } from './resources/constants';
 import MissionsScreen from './modules/mission/screens/Missions';
 import OrderScreen from './modules/order/screens/Order';
-import ScanQRCode from './modules/qrcode/screens/ScanQRCode'
+import DeliverSuccessScreen from './modules/order/screens/DeliverSuccess/index';
 
 export const getScreenName = (bundleIdentifier, screenName) => `${bundleIdentifier}.${screenName}`
 
@@ -18,7 +18,7 @@ export const registerScreens = () => {
   registerScreen('SignIn', SignIn)
   registerScreen('Missions', MissionsScreen)
   registerScreen('Order', OrderScreen)
-  registerScreen('ScanQRCode', ScanQRCode)
+  registerScreen('DeliverSuccess', DeliverSuccessScreen)
 
 }
 

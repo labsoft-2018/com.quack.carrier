@@ -13,6 +13,7 @@ export default () => {
     h3: {fontSize: 36, fontWeight: '300'},
     h4: {fontSize: 28, fontWeight: '300'},
     h5: {fontSize: 20, fontWeight: '300'},
+    h6: {fontSize: 14, fontWeight: '300'},
     h1Bold: {fontSize: 20, fontWeight: '700'},
   });
 }
