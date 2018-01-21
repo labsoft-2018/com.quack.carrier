@@ -1,8 +1,9 @@
 import * as React from 'react'
 import { View, TextStyle, ViewStyle } from 'react-native'
 import { Form, Field } from 'react-final-form'
-import { TextInput, Button } from 'react-native-ui-lib'
+import { Button } from 'react-native-ui-lib'
 import { Colors } from '../../../../resources/colors'
+import TextInputWidget from '../../../widgets/TextInput/index'
 
 export interface IValues {
   email: string;
@@ -12,20 +13,6 @@ export interface ISignInFormProps {
   onSubmit: (values: IValues) => Promise<any>
   validate: (values: IValues) => any
 }
-
-const TextInputWidget = ({
-  input,
-  meta,
-  ...props
-}) => (
-  <TextInput
-    onChangeText={input.onChange}
-    value={input.value}
-    error={meta.error}
-    enableErrors
-    {...props}
-  />
-)
 
 const SignInForm: React.SFC<ISignInFormProps> = ({
   onSubmit,
