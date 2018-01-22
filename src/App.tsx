@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import {
   StyleSheet,
   Text,
   View,
-  Button
+  Button,
 } from 'react-native';
 import codePush from 'react-native-code-push'
-import { Navigator } from 'detox'
 
 export class App extends React.Component<{}, { hello: boolean }> {
-  state = {
-    hello: false
+  public state = {
+    hello: false,
   }
 
   private handlePress = () => {
@@ -21,26 +20,26 @@ export class App extends React.Component<{}, { hello: boolean }> {
 
   private handleNextScreen = () => {
     this.setState({
-      hello: true
+      hello: true,
     })
   }
   public render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome} testID="welcomeText">
+        <Text style={styles.welcome} testID='welcomeText'>
           A simple update 0.0.11
         </Text>
         <Button
           onPress={this.handlePress}
-          title="UPDATE hehe"
+          title='UPDATE hehe'
         />
         <Button
           onPress={this.handleNextScreen}
-          title="Next screen"
-          testID="helloButton"
+          title='Next screen'
+          testID='helloButton'
         />
         {this.state.hello &&
-          <Text style={styles.welcome} testID="helloText">
+          <Text style={styles.welcome} testID='helloText'>
             Hello !
           </Text>
         }
