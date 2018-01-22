@@ -6635,9 +6635,9 @@ react-native-tab-view@^0.0.74:
   dependencies:
     prop-types "^15.6.0"
 
-react-native-ui-lib@^2.0.156:
-  version "2.0.156"
-  resolved "https://registry.yarnpkg.com/react-native-ui-lib/-/react-native-ui-lib-2.0.156.tgz#32066915d11d264ebb4973de4e6885ca71fac1de"
+react-native-ui-lib@^2.0.158:
+  version "2.0.158"
+  resolved "https://registry.yarnpkg.com/react-native-ui-lib/-/react-native-ui-lib-2.0.158.tgz#553d8172f4d3cba5510160e1ba85b4056471f565"
   dependencies:
     babel-plugin-transform-inline-environment-variables "^0.0.2"
     hoist-non-react-statics "^2.3.0"
