@@ -1,5 +1,6 @@
 import * as React from 'react'
-import SignInForm, { IValues } from '../../components/SignInForm'
+import { IValues } from '../../components/SignInForm'
+import SignIn from '../../containers/SignIn'
 import { View, Image, StyleSheet, ViewStyle, Text, TextStyle } from 'react-native'
 import ScreenWrapper from '../../../common/components/ScreenWrapper'
 
@@ -24,10 +25,7 @@ export default class SignInScreen extends React.Component {
           Quack Pack
         </Text>
         <View style={styles.formWrapper}>
-          <SignInForm
-            onSubmit={this.handleSubmit}
-            validate={() => null}
-          />
+          <SignIn navigator={this.props.navigator} />
         </View>
 
       </ScreenWrapper>

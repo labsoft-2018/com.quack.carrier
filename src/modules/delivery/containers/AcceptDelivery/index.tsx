@@ -1,5 +1,6 @@
 import * as React from 'react'
 import AcceptDelivery from '../../components/AcceptDelivery/index'
+import { navigateToCurrentDelivery } from '../../../../navigation'
 
 const locations = [{
   id: 'a',
@@ -28,12 +29,14 @@ const products = [{
   quantity: 3,
 }]
 
-export default () => <AcceptDelivery
+export default ({
+  navigator,
+}) => <AcceptDelivery
   onAcceptMission={() => {
-    alert('accept')
+    navigateToCurrentDelivery(navigator)
   }}
   onDeclineMission={() => {
-    alert('decline')
+    navigator.pop()
   }}
   locations={locations}
 />

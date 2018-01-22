@@ -9,7 +9,9 @@ export default class WaitingDeliveryScreen extends React.Component {
   public render() {
     return (
       <ScreenWrapper>
-        <WaitingDelivery />
+        <WaitingDelivery
+          navigator={this.props.navigator}
+        />
       </ScreenWrapper>
     )
   }

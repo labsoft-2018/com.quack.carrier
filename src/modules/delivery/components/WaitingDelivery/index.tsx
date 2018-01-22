@@ -1,17 +1,23 @@
 import * as React from 'react'
-import { StyleSheet, TextStyle, ViewStyle, Switch } from 'react-native'
+import { StyleSheet, TextStyle, ViewStyle, Switch, TouchableOpacity } from 'react-native'
 import { Text, View } from 'react-native-ui-lib'
 import loadingAnimation from '../../../../resources/animations/loading'
 import AutoPlayLottie from '../../../common/components/AutoPlayLottie/index'
 
-const WaitingDelivery: React.SFC<{}> = () => (
-  <View style={{flex: 1}}>
-    <View style={{flex: 1}}>
-      <AutoPlayLottie
-        source={loadingAnimation}
-      />
-    </View>
-
+export interface IWaitingDeliveryProps {
+  onDeliveryAvailable: () => void;
+}
+const WaitingDelivery: React.SFC<IWaitingDeliveryProps> = ({
+  onDeliveryAvailable,
+}) => (
+  <View flex>
+    <TouchableOpacity onPress={onDeliveryAvailable} style={{flex: 1}}>
+      <View flex>
+        <AutoPlayLottie
+          source={loadingAnimation}
+        />
+      </View>
+    </TouchableOpacity>
     <Text style={styles.text}>
       Aguardando missões...
     </Text>

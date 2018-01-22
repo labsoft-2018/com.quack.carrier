@@ -9,7 +9,9 @@ export default class AcceptDeliveryScreen extends React.Component {
   public render() {
     return (
       <ScreenWrapper>
-        <AcceptDelivery />
+        <AcceptDelivery
+          navigator={this.props.navigator}
+        />
       </ScreenWrapper>
     )
   }

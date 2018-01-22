@@ -9,7 +9,7 @@ export default class DeliverySuccessScreen extends React.Component {
   public render() {
     return (
       <ScreenWrapper>
-        <DeliverySuccess />
+        <DeliverySuccess navigator={this.props.navigator} />
       </ScreenWrapper>
     )
   }

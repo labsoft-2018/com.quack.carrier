@@ -10,7 +10,7 @@ export interface IValues {
   password: string;
 }
 export interface ISignInFormProps {
-  onSubmit: (values: IValues) => Promise<any>
+  onSubmit: (values: IValues) => void
   validate: (values: IValues) => any
 }
 

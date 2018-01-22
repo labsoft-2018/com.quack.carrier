@@ -9,7 +9,7 @@ export default class CurrentDeliveryScreen extends React.Component {
   public render() {
     return (
       <ScreenWrapper>
-        <CurrentDelivery />
+        <CurrentDelivery navigator={this.props.navigator} />
       </ScreenWrapper>
     )
   }

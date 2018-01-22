@@ -4,8 +4,17 @@ import { Colors } from '../../../../resources/colors'
 import DeliveryBook from '../DeliveryBook/index'
 import ConfirmDelivery from '../ConfirmDelivery'
 
-const CurrentDelivery: React.SFC<{}> = ({
-
+export interface ICurrentDeliveryProps {
+  confirmDeliveryModalOpen: boolean;
+  closeConfirmDeliveryModal: () => void;
+  openConfirmDeliveryModal: () => void;
+  onQRCodeRead: (qrCode: string) => void;
+}
+const CurrentDelivery: React.SFC<ICurrentDeliveryProps> = ({
+  confirmDeliveryModalOpen,
+  closeConfirmDeliveryModal,
+  openConfirmDeliveryModal,
+  onQRCodeRead,
 }) => (
   <View flex>
     <DeliveryBook />
@@ -15,18 +24,12 @@ const CurrentDelivery: React.SFC<{}> = ({
       size='large'
       fullWidth
       borderRadius={0}
-      onPress={() => {
-        alert('confirmar entrega')
-      }}
+      onPress={openConfirmDeliveryModal}
     />
     <ConfirmDelivery
-      isVisible={false}
-      onRequestClose={() => {
-        alert('on request close')
-      }}
-      onQRCodeRead={() => {
-        alert('on qrcode read')
-      }}
+      isVisible={confirmDeliveryModalOpen}
+      onRequestClose={closeConfirmDeliveryModal}
+      onQRCodeRead={onQRCodeRead}
     />
   </View>
 )
