@@ -6,9 +6,9 @@ export const apolloProviderHOC = (WrappedComponent, client) => {
   class Enhance extends React.Component {
     public render() {
       return (
-          <ApolloProvider client={client}>
-            <WrappedComponent {...this.props} />
-          </ApolloProvider>
+        <ApolloProvider client={client}>
+          <WrappedComponent {...this.props} />
+        </ApolloProvider>
       )
     }
   }
