@@ -1,13 +1,13 @@
 import { Navigation } from 'react-native-navigation'
-import { Screens } from './resources/screens'
+import { Screens } from './screen-names'
+import { mainTabsApp, signInApp } from './apps'
 
-export const navigateToSignIn = () => {
-  Navigation.startSingleScreenApp({
-    screen: {
-      screen: Screens.SignIn,
-    },
-    animationType: 'fade',
-  });
+export const loadSignInScreen = () => {
+  Navigation.startSingleScreenApp(signInApp);
+}
+
+export const loadMainScreen = () => {
+  Navigation.startTabBasedApp(mainTabsApp);
 }
 
 export const navigateToWaitingMission = (navigator) => {
@@ -38,4 +38,13 @@ export const resetToWaitingDelivery = (navigator) => {
   navigator.resetTo({
     screen: Screens.WaitingDelivery,
   })
+}
+
+export const loadWaypoint = () => {
+  Navigation.startSingleScreenApp({
+    screen: {
+      screen: Screens.Waypoint,
+    },
+    animationType: 'fade',
+  });
 }

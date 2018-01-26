@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { FlatList, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { View, Text } from 'react-native-ui-lib'
 
 export interface IProductListItem {

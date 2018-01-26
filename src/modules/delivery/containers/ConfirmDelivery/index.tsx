@@ -1,3 +1,4 @@
+import * as React from 'react'
 import ConfirmDelivery from '../../components/ConfirmDelivery'
 
 export default () => <ConfirmDelivery

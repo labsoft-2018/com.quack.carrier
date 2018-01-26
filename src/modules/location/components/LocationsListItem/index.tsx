@@ -4,16 +4,17 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons'
 import { Colors } from '../../../../resources/colors'
 
 export interface ILocationsListItemProps {
+  id: string;
   name: string;
   address: string;
 }
 const LocationsListItem: React.SFC<ILocationsListItemProps> = ({
   name,
-  address
+  address,
 }) => (
   <View row centerV style={{ padding: 20 }}>
     <EvilIcons
-      name="location"
+      name='location'
       size={40}
       style={{marginRight: 20}}
       color={Colors.PRIMARY_COLOR}

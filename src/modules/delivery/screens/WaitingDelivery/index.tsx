@@ -4,7 +4,7 @@ import WaitingDelivery from '../../containers/WaitingDelivery'
 
 export default class WaitingDeliveryScreen extends React.Component {
   public static navigatorStyle = {
-    navBarHidden: true,
+    navBarHidden: false,
   }
   public render() {
     return (

@@ -8,7 +8,7 @@ export interface ILocationsListProps {
   locations: ILocationsListItemProps[];
 }
 const LocationsList: React.SFC<ILocationsListProps> = ({
-  locations
+  locations,
 }) => (
   <LocationsFlatList
     keyExtractor={(item) => item.id}

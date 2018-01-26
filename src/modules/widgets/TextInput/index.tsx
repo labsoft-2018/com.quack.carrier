@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { TextInput, Button } from 'react-native-ui-lib'
+import { TextInput } from 'react-native-ui-lib'
 
 const TextInputWidget = ({
   input,
   meta,
-  ...props
+  ...props,
 }) => (
   <TextInput
     onChangeText={input.onChange}
