@@ -1,15 +1,21 @@
 import { makeHot, tryUpdateSelf, callOnce, clearCacheFor, redraw } from 'haul/hot';
-import registerScreens from './screens';
-import configTheme from './config/theme'
-import { navigateToSignIn } from './navigation'
+import registerScreens from './navigation/register-screens';
+import configReactNativeUiLibTheme from './config/react-native-ui-lib-theme'
+import { startAppOnSignIn, loadWaypoint } from './navigation/actions'
+import { newApolloClient } from './system/apollo-client'
+import { newConfig, Env } from './system/config'
 
-const startApp = () => {
-  configTheme()
-  registerScreens()
-  navigateToSignIn()
+const boot = (env) => {
+  const config = newConfig(env)
+  const apolloClient = newApolloClient(config)
+  configReactNativeUiLibTheme()
+  registerScreens(apolloClient)
+  loadWaypoint()
 }
 
-startApp()
+const env = __DEV__ ? Env.DEV : Env.PROD
+
+boot(env)
 
 // if (module.hot) {
 //   module.hot.accept(() => {})

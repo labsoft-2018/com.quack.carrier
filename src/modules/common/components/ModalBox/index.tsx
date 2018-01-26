@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { View, Text } from 'react-native-ui-lib'
+import { View } from 'react-native-ui-lib'
 import Modal from 'react-native-modal'
 import { StyleSheet, ViewStyle, TouchableOpacity } from 'react-native'
 import { Colors } from '../../../../resources/colors'
@@ -21,7 +21,7 @@ const ModalBox: React.SFC<IQRCodeModalProps> = ({
     <View style={styles.modalBox}>
       <View style={styles.header}>
         <TouchableOpacity onPress={onRequestClose}>
-          <EvilIcons name="close" size={32} />
+          <EvilIcons name='close' size={32} />
         </TouchableOpacity>
       </View>
       <View style={[ styles.body, bodyStyle]}>
@@ -35,11 +35,11 @@ const styles = StyleSheet.create({
   modalBox: {
     backgroundColor: Colors.WHITE,
     borderRadius: 10,
-    overflow: 'hidden'
+    overflow: 'hidden',
   } as ViewStyle,
   header: {
     padding: 10,
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
   } as ViewStyle,
   body: {
     padding: 20,

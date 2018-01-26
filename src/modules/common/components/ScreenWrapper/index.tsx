@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { View, StyleSheet, ViewStyle, StatusBar } from 'react-native'
+import { View, StyleSheet, ViewStyle } from 'react-native'
 
 const ScreenWrapper: React.SFC<any> = ({
-  children
+  children,
 }) => (
   <View style={styles.wrapper}>
     {children}
@@ -12,8 +12,8 @@ const ScreenWrapper: React.SFC<any> = ({
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    paddingTop: 22
-  } as ViewStyle
+    // paddingTop: 22,
+  } as ViewStyle,
 })
 
 export default ScreenWrapper

@@ -1,4 +1,4 @@
-import { BUNDLE_IDENTIFIER } from './constants'
+import { BUNDLE_IDENTIFIER } from '../resources/constants'
 const getScreenName = (bundleIdentifier, screenName) => `${bundleIdentifier}.${screenName}`
 
 export const Screens = {
@@ -7,4 +7,6 @@ export const Screens = {
   AcceptDelivery: getScreenName(BUNDLE_IDENTIFIER, 'AcceptDelivery'),
   CurrentDelivery: getScreenName(BUNDLE_IDENTIFIER, 'CurrentDelivery'),
   DeliverySuccess: getScreenName(BUNDLE_IDENTIFIER, 'DeliverySuccess'),
+  Waypoint: getScreenName(BUNDLE_IDENTIFIER, 'Waypoint'),
+  Settings: getScreenName(BUNDLE_IDENTIFIER, 'Settings'),
 }

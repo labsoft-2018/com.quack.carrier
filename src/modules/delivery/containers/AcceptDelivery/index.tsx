@@ -1,6 +1,6 @@
 import * as React from 'react'
 import AcceptDelivery from '../../components/AcceptDelivery/index'
-import { navigateToCurrentDelivery } from '../../../../navigation'
+import { navigateToCurrentDelivery } from '../../../../navigation/actions'
 
 const locations = [{
   id: 'a',

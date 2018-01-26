@@ -10,39 +10,39 @@ export interface IValues {
   password: string;
 }
 export interface ISignInFormProps {
-  onSubmit: (values: IValues) => void
+  carrierSignInWithEmail: (values: IValues) => void
   validate: (values: IValues) => any
 }
 
 const SignInForm: React.SFC<ISignInFormProps> = ({
-  onSubmit,
+  carrierSignInWithEmail,
   validate,
 }) => (
   <Form
-    onSubmit={onSubmit}
+    onSubmit={carrierSignInWithEmail}
     validate={validate}
     render={({ handleSubmit, pristine, invalid }) => (
       <View style={styles.formWrapper}>
         <View style={styles.inputWrapper}>
           <Field
-            name="login"
+            name='email'
             component={TextInputWidget}
-            placeholder="E-mail"
+            placeholder='E-mail'
             autoCapitalize='none'
             underlineColor={Colors.PRIMARY_COLOR}
             />
           <Field
-            name="password"
+            name='password'
             component={TextInputWidget}
             secureTextEntry
             autoCapitalize='none'
-            placeholder="Senha"
+            placeholder='Senha'
             underlineColor={Colors.PRIMARY_COLOR}
           />
         </View>
         <Button
           backgroundColor={Colors.PRIMARY_COLOR}
-          label="Login"
+          label='Login'
           size='large'
           fullWidth
           borderRadius={0}
@@ -57,7 +57,7 @@ const SignInForm: React.SFC<ISignInFormProps> = ({
 
 const styles = {
   button: {
-    marginTop: 50
+    marginTop: 50,
   } as TextStyle,
   formWrapper: {
     flex: 1,
@@ -65,6 +65,6 @@ const styles = {
   inputWrapper: {
     marginHorizontal: 20,
     flex: 1,
-  } as TextStyle
+  } as TextStyle,
 }
 export default SignInForm

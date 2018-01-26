@@ -1,6 +1,6 @@
 import * as React from 'react'
 import CurrentDelivery from '../../components/CurrentDelivery'
-import { navigateToDeliverySuccess } from '../../../../navigation'
+import { navigateToDeliverySuccess } from '../../../../navigation/actions'
 import { Alert } from 'react-native';
 
 export interface ICurrentDeliveryContainerProps {
@@ -56,4 +56,3 @@ export default class extends React.Component<ICurrentDeliveryContainerProps, ICu
     )
   }
 }
-,
