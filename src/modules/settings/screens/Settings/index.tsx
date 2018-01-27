@@ -10,8 +10,8 @@ export default class SettingsScreen extends React.Component {
     navBarHidden: false,
   }
 
-  public handleLogout = () => {
-    AsyncStorage.removeItem('token')
+  public handleLogout = async () => {
+    await AsyncStorage.removeItem('token')
     loadSignInScreen()
   }
 

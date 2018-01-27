@@ -1,5 +1,6 @@
 export interface IConfig {
-  graphQLEndpoint: string
+  graphQLEndpoint: string;
+  socketEndpoint: string;
 }
 
 export enum Env {
@@ -9,10 +10,12 @@ export enum Env {
 
 const prodConfig: IConfig = {
   graphQLEndpoint: 'http://localhost:8670/graphql',
+  socketEndpoint: 'http://localhost:3000',
 }
 
 const devConfig: IConfig = {
   graphQLEndpoint: 'http://localhost:8670/graphql',
+  socketEndpoint: 'http://localhost:3000',
 }
 export const newConfig = (env: Env) => {
   switch (env) {

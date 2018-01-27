@@ -1,30 +1,34 @@
 import * as React from 'react'
 import WaitingDelivery from '../../components/WaitingDelivery'
 import { navigateToAcceptDelivery } from '../../../../navigation/actions'
-import BackgroundGeolocation from "react-native-background-geolocation";
+import BackgroundGeolocation from 'react-native-background-geolocation';
+import SocketIOClient from 'socket.io-client';
+import { withSocket } from '../../../socket/hocs/with-socket'
 
+export interface IBackgroundLocation {
+  coords: {
+    latitude: number;
+    longitude: number
+  }
+}
 
-export default class extends React.Component {
-  public componentWillMount() {
-    ////
-    // 1.  Wire up event-listeners
-    //
+const ROOM_FIXME = 'room0'
 
+export interface IWaitingDeliveryContainerProps {
+  socket: SocketIOClient.Socket
+}
+class WaitingDeliveryContainer extends React.Component<IWaitingDeliveryContainerProps> {
+
+  private setupGeolocationWatcher = () => {
     // This handler fires whenever bgGeo receives a location update.
     BackgroundGeolocation.on('location', this.onLocation, this.onError);
-
     // This handler fires when movement states changes (stationary->moving; moving->stationary)
     BackgroundGeolocation.on('motionchange', this.onMotionChange);
-
     // This event fires when a change in motion activity is detected
     BackgroundGeolocation.on('activitychange', this.onActivityChange);
-
     // This event fires when the user toggles location-services authorization
     BackgroundGeolocation.on('providerchange', this.onProviderChange);
 
-    ////
-    // 2.  #configure the plugin (just once for life-time of app)
-    //
     BackgroundGeolocation.configure({
       // Geolocation Config
       desiredAccuracy: 0,
@@ -38,51 +42,64 @@ export default class extends React.Component {
       startOnBoot: true,        // <-- Auto start tracking when device is powered-up.
     }, (state) => {
       console.log('- BackgroundGeolocation is configured and ready: ', state.enabled);
-
       if (!state.enabled) {
-        ////
-        // 3. Start tracking!
-        //
         BackgroundGeolocation.start(() => {
           console.log('- Start success');
         });
       }
     });
   }
-   // You must remove listeners when your component unmounts
-  public componentWillUnmount() {
-    // Remove BackgroundGeolocation listeners
-    BackgroundGeolocation.un('location', this.onLocation);
-    BackgroundGeolocation.un('motionchange', this.onMotionChange);
-    BackgroundGeolocation.un('activitychange', this.onActivityChange);
-    BackgroundGeolocation.un('providerchange', this.onProviderChange);
 
+  private killGeolocationWatcher = () => {
     // Or just remove them all-at-once
     BackgroundGeolocation.removeListeners();
   }
-  public onLocation(location) {
-    console.log('- [event] location: ', location);
+
+  private onLocation = (location: IBackgroundLocation) => {
+    this.props.socket.emit('pos', {
+      lat: location.coords.latitude,
+      lng: location.coords.longitude,
+    })
   }
-  public onError(error) {
+
+  // TODO
+  private onError(error) {
     console.warn('- [event] location error ', error);
   }
-  public onActivityChange(activity) {
+
+  // TODO
+  private onActivityChange(activity) {
     console.log('- [event] activitychange: ', activity);  // eg: 'on_foot', 'still', 'in_vehicle'
   }
-  public onProviderChange(provider) {
+
+  // TODO
+  private onProviderChange(provider) {
     console.log('- [event] providerchange: ', provider);
   }
-  public onMotionChange(location) {
+
+  // TODO
+  private onMotionChange(location) {
     console.log('- [event] motionchange: ', location.isMoving, location);
+  }
+
+  public componentWillMount() {
+    this.setupGeolocationWatcher()
+  }
+
+  // You must remove listeners when your component unmounts
+  public componentWillUnmount() {
+    this.killGeolocationWatcher()
   }
 
   public render() {
     return (
       <WaitingDelivery
-      onDeliveryAvailable={() => {
-        navigateToAcceptDelivery(thiis.props.navigator)
-      }}
-    />
+        onDeliveryAvailable={() => {
+          navigateToAcceptDelivery(this.props.navigator)
+        }}
+      />
     )
   }
 }
+
+export default withSocket()(WaitingDeliveryContainer)

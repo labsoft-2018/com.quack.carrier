@@ -3,13 +3,15 @@ import registerScreens from './navigation/register-screens';
 import configReactNativeUiLibTheme from './config/react-native-ui-lib-theme'
 import { startAppOnSignIn, loadWaypoint } from './navigation/actions'
 import { newApolloClient } from './system/apollo-client'
+import { newSocketClient } from './system/socket-client'
 import { newConfig, Env } from './system/config'
 
 const boot = (env) => {
   const config = newConfig(env)
   const apolloClient = newApolloClient(config)
+  const socketClient = newSocketClient(config)
   configReactNativeUiLibTheme()
-  registerScreens(apolloClient)
+  registerScreens(apolloClient, socketClient)
   loadWaypoint()
 }
 
