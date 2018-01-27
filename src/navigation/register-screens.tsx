@@ -12,16 +12,16 @@ import { apolloProviderHOC } from '../modules/base/hocs/apollo'
 import WaypointScreen from '../modules/base/screens/Waypoint/index'
 import SettingsScreen from '../modules/settings/screens/Settings/index'
 
-const registerScreen = (name, ScreenComponent, apolloClient) => {
-  Navigation.registerComponent(name, makeHot(() => apolloProviderHOC(ScreenComponent, apolloClient), name))
+const registerScreen = (name, ScreenComponent, apolloClient, socketClient) => {
+  Navigation.registerComponent(name, makeHot(() => apolloProviderHOC(ScreenComponent, apolloClient, socketClient), name))
 }
 
-export default (apolloClient) => {
-  registerScreen(Screens.SignIn, SignIn, apolloClient)
-  registerScreen(Screens.WaitingDelivery, WaitingDelivery, apolloClient)
-  registerScreen(Screens.AcceptDelivery, AcceptDelivery, apolloClient)
-  registerScreen(Screens.CurrentDelivery, CurrentDelivery, apolloClient)
-  registerScreen(Screens.DeliverySuccess, DeliverSuccess, apolloClient)
-  registerScreen(Screens.Waypoint, WaypointScreen, apolloClient)
-  registerScreen(Screens.Settings, SettingsScreen, apolloClient)
+export default (apolloClient, socketClient) => {
+  registerScreen(Screens.SignIn, SignIn, apolloClient, socketClient)
+  registerScreen(Screens.WaitingDelivery, WaitingDelivery, apolloClient, socketClient)
+  registerScreen(Screens.AcceptDelivery, AcceptDelivery, apolloClient, socketClient)
+  registerScreen(Screens.CurrentDelivery, CurrentDelivery, apolloClient, socketClient)
+  registerScreen(Screens.DeliverySuccess, DeliverSuccess, apolloClient, socketClient)
+  registerScreen(Screens.Waypoint, WaypointScreen, apolloClient, socketClient)
+  registerScreen(Screens.Settings, SettingsScreen, apolloClient, socketClient)
 }

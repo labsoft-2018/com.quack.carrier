@@ -17,7 +17,7 @@ mutation ($email: String, $password: String){
 }
 `
 
-const storeToken = (token: String) => {
+const storeToken = (token: string) => {
   return AsyncStorage.setItem('token', token);
 }
 

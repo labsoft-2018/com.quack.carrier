@@ -1,13 +1,39 @@
 import { Navigation } from 'react-native-navigation'
 import { Screens } from './screen-names'
-import { mainTabsApp, signInApp } from './apps'
+import { AppTheme } from '../resources/app-theme'
 
 export const loadSignInScreen = () => {
-  Navigation.startSingleScreenApp(signInApp);
+  Navigation.startSingleScreenApp({
+    screen: {
+      screen: Screens.SignIn,
+    },
+    animationType: 'fade',
+  });
 }
 
 export const loadMainScreen = () => {
-  Navigation.startTabBasedApp(mainTabsApp);
+  Navigation.startTabBasedApp({
+    tabs: [
+      {
+        label: 'Missões',
+        screen: Screens.WaitingDelivery,
+        title: 'Missões',
+      },
+      {
+        label: 'Configurações',
+        screen: Screens.Settings,
+        title: 'Configurações',
+      },
+    ],
+    animationType: 'fade',
+    tabsStyle: {
+      tabBarButtonColor: AppTheme.tabBarButtonColor,
+      tabBarSelectedButtonColor: AppTheme.tabBarSelectedButtonColor,
+      tabBarBackgroundColor: AppTheme.tabBarBackgroundColor,
+      tabBarLabelColor: AppTheme.tabBarLabelColor,
+      tabBarSelectedLabelColor: AppTheme.tabBarSelectedLabelColor,
+    },
+  });
 }
 
 export const navigateToWaitingMission = (navigator) => {
