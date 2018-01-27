@@ -29,6 +29,7 @@
     "react-apollo": "^2.0.4",
     "react-final-form": "^3.0.4",
     "react-native": "0.51.0",
+    "react-native-background-geolocation": "^2.10.1",
     "react-native-camera": "^0.13.0",
     "react-native-code-push": "^5.2.1",
     "react-native-gesture-handler": "^1.0.0-alpha.40",
